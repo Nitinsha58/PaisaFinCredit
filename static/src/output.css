@@ -578,20 +578,8 @@ video {
   }
 }
 
-.visible {
-  visibility: visible;
-}
-
-.collapse {
-  visibility: collapse;
-}
-
 .static {
   position: static;
-}
-
-.relative {
-  position: relative;
 }
 
 .mx-auto {
@@ -607,18 +595,6 @@ video {
   display: block;
 }
 
-.table {
-  display: table;
-}
-
-.contents {
-  display: contents;
-}
-
-.hidden {
-  display: none;
-}
-
 .h-svh {
   height: 100svh;
 }
@@ -627,42 +603,35 @@ video {
   min-height: 100%;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .max-w-\[1920px\] {
   max-width: 1920px;
 }
 
-.border-collapse {
-  border-collapse: collapse;
+.rounded {
+  border-radius: 0.25rem;
 }
 
-.transform {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.resize {
-  resize: both;
-}
-
-.border {
-  border-width: 1px;
-}
-
-.bg-gray-200 {
+.bg-blue-200 {
   --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  background-color: rgb(191 219 254 / var(--tw-bg-opacity));
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-.underline {
-  text-decoration-line: underline;
-}
-
-.outline {
-  outline-style: solid;
 }
 
 html, body {
