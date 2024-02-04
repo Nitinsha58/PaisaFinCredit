@@ -38,7 +38,7 @@ ROOT_URLCONF = "core.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / 'templates'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -87,7 +87,7 @@ USE_TZ = True
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 STATIC_URL = "/static/"
 MEDIA_URL = "/media/"
-STATIC_ROOT = Path(BASE_DIR / "staticfiles")
-MEDIA_ROOT = Path(BASE_DIR / "mediafiles")
+STATIC_ROOT = Path(BASE_DIR / "static")
+MEDIA_ROOT = Path(BASE_DIR / "media")
 
 AUTH_USER_MODEL = "users.User"

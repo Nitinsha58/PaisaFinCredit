@@ -129,3 +129,7 @@ dmypy.json
 .pyre/
 
 .vscode/
+
+
+# npm nodemodules
+node_modules/

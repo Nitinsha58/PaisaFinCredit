@@ -36,6 +36,15 @@
     python manage.py migrate
     ```
 
+5. Run npm command to install tailwind css
+    ```
+    npm install -D tailwindcss
+    ```
+6. To update the output.css run
+    ```
+    npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
+    ```
+
 ## Usage
 
 1. Start the development server:
