@@ -7,17 +7,16 @@
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'src/output.css' %}">
 </head>
-<body class="mx-auto min-h-full max-w-[1920px]">
-    <div class="container mx-auto mt-4">
-        {% block header %}
-            {% include 'header.html' %}
-        {% endblock header %}
+<body class="flex flex-col mx-auto h-full max-w-[1920px] relative">
+    
+    {% block header %}
+        {% include 'header.html' %}
+    {% endblock header %}
 
-        {% block content %}
-        {% endblock content %}
+    {% block content %}
+    {% endblock content %}
 
-        {% block footer %}
-        {% endblock footer %}
-    </div>
+    {% block footer %}
+    {% endblock footer %}
 </body>
 </html> 

@@ -1,3 +1,56 @@
-<div class="w-full p-2 py-3 bg-blue-200 rounded">
-    <p class="h-2xl">Header Section</p>
+{% load static %}
+<header class=" relative shadow-md px-4 py-2 bg-white z-101">
+    <nav class="flex justify-between lg:mx-20 xl:mx-36">
+        <div class="w-36 flex items-center">
+            <img class="" src="{% static 'images/Logo.svg' %}" alt="LOGO" srcset="">
+        </div>
+        <div class="flex items-center gap-3">
+            <div class="hidden md:flex duration-300 md:static gap-4 top-[100%] left-[-100%] md:py-0 p-5 md:p-0">
+                <ul class="flex md:flex-row flex-col md:items-center md:gap-[2vw] gap-8">
+                    <li class="max-w-fit pr-3 md:pr-0 py-1 "><a href="#">Home</a></li>
+                    <li class="max-w-fit pr-3 md:pr-0 py-1 "><a href="#">About</a></li>
+                    <li class="max-w-fit pr-3 md:pr-0 py-1 "><a href="#">Contact</a></li>
+                    <li
+                        class="text-black md:text-white md:bg-black no-underline hover:text-black-200 hover:text-underline md:py-2 md:px-5 rounded-lg">
+                        <a href="#">Apply Now</a></li>
+                    <li
+                        class="text-black md:text-white md:bg-blue-500  no-underline hover:text-black-200 hover:text-underline md:py-2 md:px-5 rounded-lg md:mx-3 md:my-3">
+                        <a href="#">Login</a></li>
+                </ul>
+            </div>
+            <div class="flex items-center gap-2">
+                <svg id="menu" xmlns="http://www.w3.org/2000/svg" onclick="onMenuToggle()" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 cursor-pointer md:hidden transition-all duration-300">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+
+                <svg id="cross" xmlns="http://www.w3.org/2000/svg" fill="none" onclick="onMenuToggle()" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 cursor-pointer md:hidden hidden transition-all duration-300">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+                  
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div id="navLinks" class="duration-300 md:hidden absolute w-2/3 h-full bg-white flex gap-8 left-[-100%] p-5 z-100">
+    <ul class="flex flex-col gap-8">
+        <li class="max-w-fit pr-3 md:pr-0 py-1 "><a href="#">Home</a></li>
+        <li class="max-w-fit pr-3 md:pr-0 py-1 "><a href="#">About</a></li>
+        <li class="max-w-fit pr-3 md:pr-0 py-1 "><a href="#">Contact</a></li>
+        <li class="max-w-fit pr-3 md:pr-0 py-1 "><a href="#">Apply Now</a></li>
+        <li class="max-w-fit pr-3 md:pr-0 py-1 "><a href="#">Contact</a></li>
+    </ul>
 </div>
+
+<script>
+    function onMenuToggle() {
+        const navlinks = document.querySelector("#navLinks");
+        navlinks.classList.toggle("left-[0%]");
+
+        const menu = document.querySelector("#menu")
+        const cross = document.querySelector("#cross")
+
+        menu.classList.toggle("hidden")
+        cross.classList.toggle("hidden")
+    }
+</script>
