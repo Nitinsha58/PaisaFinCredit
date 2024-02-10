@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <header class=" relative shadow-lg px-3 py-2">
+        <nav class="flex justify-between">
+          <div class="w-[130px] md:w-[200px] flex items-center">
+            <img src="img/paisafin_logo.png" alt="LOGO" srcset="">
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="navLinks duration-500 absolute md:static md:w-auto w-full md:h-auto h-[85vh] bg-white flex md:items-center gap-[1.5vw] top-[100%] left-[-100%] px-5 md:py-0 py-5 ">
+              <ul class="flex md:flex-row flex-col md:items-center md:gap-[2vw] gap-8">
+                <li class="relative max-w-fit pr-3 md:pr-0 py-1   "><a href="#">Home</a></li>
+                <li class="relative max-w-fit pr-3 md:pr-0 py-1   "><a href="#">About</a></li>
+                <li class="relative max-w-fit pr-3 md:pr-0 py-1   "><a href="#">Contact</a></li>
+                <li class="inline-block text-black md:text-white md:bg-black no-underline hover:text-black-200 hover:text-underline md:py-2 md:px-5 rounded-lg"><a href="#">Apply Now</a></li>
+                <li class="inline-block text-black md:text-white md:bg-blue-500  no-underline hover:text-black-200 hover:text-underline md:py-2 md:px-5 rounded-lg md:mx-3 md:my-3"><a href="#">Login</a></li>
+              </ul>
+            </div>
+            <div class="flex items-center gap-2">
+              
+              <ion-icon name="menu" onclick="onMenuToggle(this)" class="text-[30px] cursor-pointer md:hidden"></ion-icon>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+
+      <script>
+        function onMenuToggle(e) {
+            const navlinks = document.querySelector(".navLinks");
+            e.name = e.name === "menu" ? "close" : "menu";
+            navlinks.classList.toggle("left-[0%]");
+        }
+
+      </script>
+
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

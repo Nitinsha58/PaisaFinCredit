@@ -26,7 +26,6 @@ def register_user(request):
         personal_detail_form = PersonalDetailForm()
     return render(request, 'app/registration/register.html', {'user_form': user_form, 'personal_detail_form': personal_detail_form})
 
-
 def login_user(request):
     error = None
     if request.method == 'POST':
@@ -43,8 +42,15 @@ def login_user(request):
 
     return render(request, 'app/registration/login.html', {'error': error})
 
-
 def logout_user(request):
     logout(request)
     return redirect('/')
 
+def changePassword(request):
+    return render(request, 'app/registration/changePassword.html')
+
+def address(request):
+    return render(request, 'app/registration/address.html')
+
+def bankDetail(request):
+    return render(request, 'app/registration/bank.html')
