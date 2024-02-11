@@ -13,15 +13,19 @@
                     {% if request.user.is_authenticated %}
                     
                         {% if request.user.is_superuser %}
-                            <li class="text-white bg-blue-500  no-underline py-2 px-5 rounded-lg mx-3 my-3">
-                                <a href="">Dashboard</a>
+                            <li class="text-white bg-blue-500  no-underline py-2 px-5 rounded-lg mx-2 my-3">
+                                <a href="">Admin</a>
                             </li>
                         {% else %}
                         <li
-                            class="text-white bg-blue-500  no-underline py-2 px-5 rounded-lg mx-3 my-3">
+                            class="text-white bg-blue-500  no-underline py-2 px-5 rounded-lg mx-2 my-3">
                             <a href="">Dashboard</a>
                         </li>
                         {% endif %}
+                        <li
+                            class="text-white bg-red-500 no-underline py-2 px-5 rounded-lg my-3">
+                            <a href="{% url 'logout' %}">Logout</a>
+                        </li>
                     {% else %}
                     <li
                         class="text-white bg-black no-underline py-2 px-5 rounded-lg">
@@ -44,7 +48,6 @@
                 <svg id="cross" xmlns="http://www.w3.org/2000/svg" fill="none" onclick="onMenuToggle()" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 cursor-pointer md:hidden hidden transition-all duration-300">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                 </svg>
-                  
             </div>
         </div>
     </nav>

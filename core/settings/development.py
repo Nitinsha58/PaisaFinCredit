@@ -7,7 +7,7 @@ SECRET_KEY = "VerySecretDevelopmentKey"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "192.168.1.226"]
 
 # If something needs to be at exact place, use insert instead
 INSTALLED_APPS.insert(0, "whitenoise.runserver_nostatic")
