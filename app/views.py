@@ -77,3 +77,8 @@ def address(request):
 
 def bankDetail(request):
     return render(request, 'app/registration/bank.html')
+
+
+
+
+
