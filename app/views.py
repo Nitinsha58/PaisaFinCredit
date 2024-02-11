@@ -6,6 +6,9 @@ from users.models import User
 import random
 from django.contrib.auth.decorators import login_required
 
+def index(request):
+    return render(request, 'app/index.html')
+
 def register_user(request):
     if request.method == 'POST':
         user_form = UserForm(request.POST)
