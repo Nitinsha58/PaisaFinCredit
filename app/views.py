@@ -1,8 +1,10 @@
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from .forms import UserForm, PersonalDetailForm
 from users.models import User
+import random
+from django.contrib.auth.decorators import login_required
 
 def register_user(request):
     if request.method == 'POST':
@@ -41,6 +43,23 @@ def login_user(request):
             error = "Phone or password cannot be empty"
 
     return render(request, 'app/registration/login.html', {'error': error})
+
+def forgot_password(request):
+    
+    return render(request, 'app/registration/forgotPassword.html')
+
+def generate_otp(request, phone):
+    otp = ''.join([str(random.randrange(0,10)) for i in range(6)])
+    if 15 >= phone.isdigit() and len(phone) >= 10:
+        user = User.objects.filter(phone=phone).first()
+        
+        if user:
+            user.otp = otp
+            user.save()
+            return JsonResponse({'message': 'OTP sent to your phone number'})
+    return JsonResponse({'error': 'Invalid phone number'})
+
+
 
 def logout_user(request):
     logout(request)
