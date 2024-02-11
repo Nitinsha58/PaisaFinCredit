@@ -55,7 +55,7 @@ def generate_otp(request, phone):
     otp = ''.join([str(random.randrange(0,10)) for i in range(6)])
     if 15 >= phone.isdigit() and len(phone) >= 10:
         user = User.objects.filter(phone=phone).first()
-        
+
         if user:
             user.otp = otp
             user.save()
@@ -76,3 +76,8 @@ def address(request):
 
 def bankDetail(request):
     return render(request, 'app/registration/bank.html')
+
+
+
+
+

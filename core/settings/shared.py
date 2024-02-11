@@ -20,6 +20,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "app.apps.AppConfig",
     "users.apps.UsersConfig",
+    'otptest',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
