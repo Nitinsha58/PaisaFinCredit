@@ -2,22 +2,22 @@
     <div class="absolute left-2 right-2 top-16 sm:left-auto md:right-4 z-50 flex flex-col gap-4">
         {% for message in messages %}
             {% if message.tags == 'error' %}
-                <div onclick="toggle()" class="shadow-md bg-red-100 border-l-4 border-red-500 text-red-700 py-2 px-4" role="alert">
+                <div onclick="toggle()" class="alert cursor-pointer shadow-md bg-red-100 border-l-4 border-red-500 text-red-700 py-2 px-4" role="alert">
                     <p class="font-bold">Error</p>
                     <p>{{message}}</p>
                 </div>    
             {% elif message.tags == 'info' %}
-                <div onclick="toggle()" class="shadow-md bg-blue-100 border-l-4 border-blue-500 text-blue-700 py-2 px-4" role="alert">
+                <div onclick="toggle()" class="alert cursor-pointer shadow-md bg-blue-100 border-l-4 border-blue-500 text-blue-700 py-2 px-4" role="alert">
                     <p class="font-bold">Info</p>
                     <p>{{message}}</p>
                 </div>
             {% elif message.tags == 'success' %}
-                <div onclick="toggle()" class="shadow-md bg-teal-100 border-l-4 border-teal-500 text-teal-700 py-2 px-4" role="alert">
+                <div onclick="toggle()" class="alert cursor-pointer shadow-md bg-teal-100 border-l-4 border-teal-500 text-teal-700 py-2 px-4" role="alert">
                     <p class="font-bold">Success</p>
                     <p>{{message}}</p>
                 </div>
             {% elif message.tags == 'warning' %}
-                <div onclick="toggle()" class="shadow-md bg-orange-100 border-l-4 border-orange-500 text-orange-700 py-2 px-4" role="alert">
+                <div onclick="toggle()" class="alert cursor-pointer shadow-md bg-orange-100 border-l-4 border-orange-500 text-orange-700 py-2 px-4" role="alert">
                     <p class="font-bold">Warning</p>
                     <p>{{message}}</p>
                 </div>

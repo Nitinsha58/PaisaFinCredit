@@ -5,6 +5,7 @@ from .forms import UserForm, PersonalDetailForm
 from users.models import User
 import random
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 def index(request):
     return render(request, 'app/index.html')
@@ -19,7 +20,7 @@ def register_user(request):
             my_user = User.objects.get(phone=user.phone)
 
             if my_user is None:
-                return HttpResponse("<h1>User not found</h1>")
+                    return HttpResponse("<h1>User not found</h1>")
 
             personal_detail = personal_detail_form.save(commit=False)
             personal_detail.user = my_user
@@ -33,14 +34,16 @@ def register_user(request):
 
 def login_user(request):
     error = None
+    if request.user.is_authenticated:
+        return redirect('home')
     if request.method == 'POST':
         phone = request.POST.get('phone')
         password = request.POST.get('password')
         if phone and password:
             user = authenticate(phone=phone, password=password)
             if user is not None:
-                return HttpResponse("<h1>User logged in successfully</h1>")
-                # login(request, user)
+                login(request, user)
+                return redirect('home')
             error = "Incorrect phone number or password "
         else:
             error = "Phone or password cannot be empty"
@@ -65,6 +68,7 @@ def generate_otp(request, phone):
 
 
 def logout_user(request):
+    messages.info(request, "Logged out successfully")
     logout(request)
     return redirect('/')
 
