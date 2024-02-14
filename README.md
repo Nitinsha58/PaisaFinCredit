@@ -42,7 +42,7 @@
     ```
 6. To update the output.css run
     ```
-    npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
+    npx tailwindcss -i ./static/src/input.css -o ./static/src/output.css --watch
     ```
 
 ## Usage
