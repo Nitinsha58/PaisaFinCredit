@@ -1,39 +1,35 @@
-from os import environ
+import json
 from core.settings.shared import *
 
+# Read configuration from the JSON file
+with open('/etc/config.json') as f:
+    config = json.load(f)
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = environ.get("DJANGO_SECRET_KEY", None)
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(int(environ.get("DJANGO_DEBUG", 0)))
-
-ALLOWED_HOSTS = environ.get("DJANGO_ALLOWED_HOSTS", "").split(",")
-CSRF_TRUSTED_ORIGINS = environ.get("DJANGO_CSRF_TRUSTED_ORIGINS", "").split(",")
-
+# Django settings
+SECRET_KEY = config.get("DJANGO_SECRET_KEY", None)
+DEBUG = bool(int(config.get("DJANGO_DEBUG", 0)))
+ALLOWED_HOSTS = config.get("DJANGO_ALLOWED_HOSTS", [])
+CSRF_TRUSTED_ORIGINS = config.get("DJANGO_CSRF_TRUSTED_ORIGINS", [])
 
 # Database
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
+# Database settings
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": environ.get("DJANGO_DATABASE_NAME", None),
-        "USER": environ.get("DJANGO_DATABASE_USER", None),
-        "PASSWORD": environ.get("DJANGO_DATABASE_PASSWORD", None),
-        "HOST": environ.get("DJANGO_DATABASE_HOST", None),
-        "PORT": environ.get("DJANGO_DATABASE_PORT", None),
+        "NAME": config.get("DJANGO_DATABASE_NAME", None),
+        "USER": config.get("DJANGO_DATABASE_USER", None),
+        "PASSWORD": config.get("DJANGO_DATABASE_PASSWORD", None),
+        "HOST": config.get("DJANGO_DATABASE_HOST", None),
+        "PORT": config.get("DJANGO_DATABASE_PORT", None),
     }
 }
 
-INSTALLED_APPS += [
-    "storages",
-]
-
-# Amazon s3 settings
-AWS_S3_ACCESS_KEY_ID = environ.get("AWS_S3_ACCESS_KEY_ID", None)
-AWS_S3_SECRET_ACCESS_KEY = environ.get("AWS_S3_SECRET_ACCESS_KEY", None)
-AWS_STORAGE_BUCKET_NAME = environ.get("AWS_STORAGE_BUCKET_NAME", None)
+# AWS S3 settings
+AWS_S3_ACCESS_KEY_ID = config.get("AWS_S3_ACCESS_KEY_ID", None)
+AWS_S3_SECRET_ACCESS_KEY = config.get("AWS_S3_SECRET_ACCESS_KEY", None)
+AWS_STORAGE_BUCKET_NAME = config.get("AWS_STORAGE_BUCKET_NAME", None)
 
 AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 AWS_PRELOAD_METADATA = True
