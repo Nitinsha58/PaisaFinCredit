@@ -7,6 +7,8 @@ name = "pypi"
 django = "*"
 whitenoise = "*"
 pillow = "*"
+boto3 = "*"
+django-storages = "*"
 
 [dev-packages]
 django-debug-toolbar = "*"
