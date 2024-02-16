@@ -1,0 +1,17 @@
+{
+    "DJANGO_SECRET_KEY": "7d33e0cdekf-2b9a-g2goijwe-9c83-2c7791a5ed41",
+    "DJANGO_DEBUG": false,
+    "DJANGO_ALLOWED_HOSTS": ["localhost","65.2.142.102","paisafincredit.com"],
+    "DJANGO_CSRF_TRUSTED_ORIGINS": ["http://65.2.142.102","http://paisafincredit.com"],
+
+    "DJANGO_DATABASE_NAME": "paisaproject",
+    "DJANGO_DATABASE_USER": "paisauser",
+    "DJANGO_DATABASE_PASSWORD": "a|s/xZteeRW1=@+#p-",
+    "DJANGO_DATABASE_HOST": "localhost",
+    "DJANGO_DATABASE_PORT": "5432",
+
+    "AWS_S3_ACCESS_KEY_ID": "AKIAX2QUO74WQKXDL75K",
+    "AWS_S3_SECRET_ACCESS_KEY": "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",
+    "AWS_STORAGE_BUCKET_NAME": "paisafincreditbucket"
+  }
+  
