@@ -3,7 +3,7 @@ from .managers import CustomUserManager
 from django.db import models
 
 class User(AbstractBaseUser, PermissionsMixin):
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     phone = models.CharField(max_length=10, unique=True)
     is_admin = models.BooleanField(default=False)
     is_customer = models.BooleanField(default=False)
